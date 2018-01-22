@@ -3,7 +3,7 @@ package com.userFront.domain;
 import java.math.BigDecimal;
 import java.util.List;
 
-public class Savings {
+public class SavingsAccount {
 	private Long id;
 	private int accountNumber;
 	private BigDecimal accountBalance;
@@ -13,6 +13,7 @@ public class Savings {
 	public Long getId() {
 		return id;
 	}
+	
 
 	public void setId(Long id) {
 		this.id = id;
@@ -34,11 +35,11 @@ public class Savings {
 		this.accountBalance = accountBalance;
 	}
 
-	public List<Savings> getPrimaryTransactionList() {
+	public List<SavingsAccount> getPrimaryTransactionList() {
 		return primaryTransactionList;
 	}
 
-	public void setPrimaryTransactionList(List<Savings> primaryTransactionList) {
+	public void setPrimaryTransactionList(List<SavingsAccount> primaryTransactionList) {
 		this.primaryTransactionList = primaryTransactionList;
 	}
 

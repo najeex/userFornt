@@ -15,7 +15,7 @@ public class User {
 	
 	private PrimaryAccount primaryAccount;
 	
-	private SavingAccount savingsAccount;
+	private SavingsAccount savingsAccount;
 	
 	private List<Appointment> appointmentList;
 	
@@ -93,11 +93,11 @@ public class User {
 		this.primaryAccount = primaryAccount;
 	}
 
-	public SavingAccount getSavingsAccount() {
+	public SavingsAccount getSavingsAccount() {
 		return savingsAccount;
 	}
 
-	public void setSavingsAccount(SavingAccount savingsAccount) {
+	public void setSavingsAccount(SavingsAccount savingsAccount) {
 		this.savingsAccount = savingsAccount;
 	}
 
