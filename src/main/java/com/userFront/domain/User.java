@@ -21,9 +21,9 @@ public class User {
 	@Column(name="email", nullable = false, unique = true)
 	private String email;
 	private String phone;
-	
+
 	private boolean enabled = true;
-	
+
 	@OneToOne
 	private PrimaryAccount primaryAccount;
 

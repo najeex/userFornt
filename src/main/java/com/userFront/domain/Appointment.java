@@ -1,12 +1,17 @@
 package com.userFront.domain;
 
 import java.util.Date;
-import javax.persistence.*;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Appointment {
 
-	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
@@ -18,7 +23,6 @@ public class Appointment {
 	@ManyToOne
 	@JoinColumn(name = "user_id")
 	private User user;
-
 
 	public Long getId() {
 		return id;
@@ -52,20 +56,20 @@ public class Appointment {
 		this.description = description;
 	}
 
-	public boolean isConfirmed() {
-		return confirmed;
-	}
-
-	public void setConfirmed(boolean confirmed) {
-		this.confirmed = confirmed;
-	}
-
 	public User getUser() {
 		return user;
 	}
 
 	public void setUser(User user) {
 		this.user = user;
+	}
+
+	public boolean isConfirmed() {
+		return confirmed;
+	}
+
+	public void setConfirmed(boolean confirmed) {
+		this.confirmed = confirmed;
 	}
 
 	@Override
@@ -75,7 +79,6 @@ public class Appointment {
 				", date=" + date +
 				", location='" + location + '\'' +
 				", description='" + description + '\'' +
-				", confirmed=" + confirmed +
 				", user=" + user +
 				'}';
 	}
