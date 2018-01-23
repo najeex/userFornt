@@ -3,7 +3,7 @@ package com.userFront.domain;
 import java.math.BigDecimal;
 import java.util.Date;
 
-public class SavingTransaction {
+public class SavingsTransaction {
 
 	private Long id;
 	private Date date;
@@ -15,9 +15,9 @@ public class SavingTransaction {
 	
 	private SavingsAccount savingAccount;
 	
-	public SavingTransaction() {}
+	public SavingsTransaction() {}
 
-	public SavingTransaction(Date date, String description, String type, String status, double amount,
+	public SavingsTransaction(Date date, String description, String type, String status, double amount,
 			BigDecimal availableBalance, SavingsAccount savingAccount) {
 		super();
 		this.date = date;

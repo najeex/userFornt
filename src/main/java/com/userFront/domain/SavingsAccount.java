@@ -35,12 +35,12 @@ public class SavingsAccount {
 		this.accountBalance = accountBalance;
 	}
 
-	public List<SavingsAccount> getPrimaryTransactionList() {
-		return primaryTransactionList;
-	}
+	public List<SavingsTransaction> getSavingsTransactionList() {
+        return savingsTransactionList;
+    }
 
-	public void setPrimaryTransactionList(List<SavingsAccount> primaryTransactionList) {
-		this.primaryTransactionList = primaryTransactionList;
-	}
+    public void setSavingsTransactionList(List<SavingsTransaction> savingsTransactionList) {
+        this.savingsTransactionList = savingsTransactionList;
+    }
 
 }

@@ -2,8 +2,12 @@ package com.userFront.domain;
 
 import java.util.Date;
 
+@Entity
 public class Appointment {
 
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.Auto)
 	private Long id;
 	private Date date;
 	private String location;

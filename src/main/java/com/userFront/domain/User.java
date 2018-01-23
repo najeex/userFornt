@@ -6,7 +6,7 @@ public class User {
 	private Long userId;
 	private String username;
 	private String password;
-	private String firsttName;
+	private String firstName;
 	private String lastName;
 	private String email;
 	private String phone;
@@ -45,12 +45,12 @@ public class User {
 		this.password = password;
 	}
 
-	public String getFirsttName() {
-		return firsttName;
+	public String getFirstName() {
+		return firstName;
 	}
 
-	public void setFirsttName(String firsttName) {
-		this.firsttName = firsttName;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
 
 	public String getLastName() {
@@ -119,8 +119,8 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [userId=" + userId + ", username=" + username + ", password=" + password + ", firsttName="
-				+ firsttName + ", lastName=" + lastName + ", email=" + email + ", phone=" + phone + ", enabled="
+		return "User [userId=" + userId + ", username=" + username + ", password=" + password + ", firstName="
+				+ firstName + ", lastName=" + lastName + ", email=" + email + ", phone=" + phone + ", enabled="
 				+ enabled + "]";
 	}
 
