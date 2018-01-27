@@ -3,5 +3,7 @@ package com.userFront.Doa;
 import com.userFront.domain.User;
 import org.springframework.data.repository.CrudRepository;
 
-public class UserDao extends CrudRepository<User, Long> {
+public interface UserDao extends CrudRepository<User, Long> {
+    User findByUsername(String username);
+    User findByEmail(String email);
 }

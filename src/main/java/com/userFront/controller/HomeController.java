@@ -1,5 +1,7 @@
 package com.userFront.controller;
 
+import com.userFront.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -10,7 +12,10 @@ import com.userFront.domain.User;
 
 @Controller
 public class HomeController {
-	
+
+    @Autowired
+    private UserService userService;
+
 	@RequestMapping("/")
 	public String home() {
 		return "redirect:/index";
@@ -28,6 +33,37 @@ public class HomeController {
         model.addAttribute("user", user);
 
         return "signup";
+
     }
-	
-}
+
+//    @RequestMapping(value = "/signup", method = RequestMethod.POST)
+//    public String signupPost(@ModelAttribute("user") User user, Model model) {
+//
+//        if (userService.checkUserExists(user.getUsername(), user.getEmail())) {
+//            if (userService.checkEmailExists(user.getEmail())) {
+//                model.addAttribute("emailExists", true);
+//            }
+//            if (userService.checkUsernameExists(user.getUsername()))
+//                model.addAttribute("usernameExists", true);
+//        }
+//        return "signup";
+        @RequestMapping(value = "/signup", method = RequestMethod.POST)
+        public String signupPost(@ModelAttribute("user") User user,  Model model) {
+
+            if (userService.checkUserExists(user.getUsername(), user.getEmail())) {
+
+                if (userService.checkEmailExists(user.getEmail())) {
+                    model.addAttribute("emailExists", true);
+                }
+
+                if (userService.checkUsernameExists(user.getUsername())) {
+                    model.addAttribute("usernameExists", true);
+                }
+                return "signup";
+            } else {
+                userService.save(user);
+                return "redirect:/";
+            }
+
+        }
+        }
