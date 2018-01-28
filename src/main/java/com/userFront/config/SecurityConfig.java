@@ -1,5 +1,6 @@
 package com.userFront.config;
 
+import com.userFront.service.UserServiceImpl.UserSecurityService;
 import org.omg.CORBA.Environment;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -56,7 +57,7 @@ public class SecurityConfig {
 
             http
                     .csrf().disable().cors().disable()
-                    .formLogin().failureUrl("/index?error").defaultSuccessUrl("/userFront").loginPage("/index").permitAll()
+                    .formLogin().failureUrl("/index?error").defaultSuccessUrl("/userFront.html").loginPage("/index").permitAll()
                     .and()
                     .logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/index?logout").deleteCookies("remember-me").permitAll()
                     .and()
